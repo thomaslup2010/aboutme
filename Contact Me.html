@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			.copy-button {
+			display: inline-block;
+			padding: 8px 16px;
+			background-color: #e0e0e0;
+			color: #222; 
+			border: none;
+			border-radius: 5px;
+			font-weight: bold;
+			cursor: pointer;
+			transition: background 0.3s, color 0.3s;
+			margin-left: 10px;
+			}
+			.copy-button:hover {
+			background-color: #cfcfcf; 
+			color: #000;
+			}
+			.email-container {
+			display: flex;
+			align-items: center;
+			}
+			#email {
+			font-size: 1.1em;
+			font-weight: bold;
+			}
+		</style>
+		<title>Contact</title>
+		<link rel="stylesheet" href="style.css">       
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono&display=swap">
+		<link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
+    <body>
+		<h1>Contact Me</h1>
+		<div class="full-width-hr">
+			<hr>
+		</div>
+		<p>You Can Contact Me At:</p>
+		<div class="email-container">
+			<p id="email"><u>tl59355@pegs.vic.edu.au</u></p>
+			<button class="copy-button" onclick="copyEmail()">Copy Email</button>
+		</div>
+		<script>
+			function copyEmail() {
+			var emailText = document.getElementById("email").innerText;
+			var tempInput = document.createElement("input");
+			tempInput.value = emailText;
+			document.body.appendChild(tempInput);
+			tempInput.select();
+			document.execCommand("copy");
+			document.body.removeChild(tempInput);
+			alert("Email copied to clipboard!");
+			}
+		</script>
+		<div class="full-width-hr">
+			<hr>
+		</div>
+		<a href="index.html">Homepage</a>
+	</body>
+</html>
